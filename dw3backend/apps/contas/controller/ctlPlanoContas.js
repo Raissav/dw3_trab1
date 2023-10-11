@@ -25,14 +25,14 @@ const insertPlanoContas = (request, res) =>
 const updatePlanoContas = (request, res) =>
   (async () => {
     const contaREG = request.body;
-    let  { msg, linhasAfetadas } = await mdlPlanoContas.UpdatePlanoContas(contaREG);
+    let  { msg, linhasAfetadas } = await mdlPlanoContas.updatePlanoContas(contaREG);
     res.json({ "status": msg, "linhasAfetadas": linhasAfetadas });
   })();
 
   const deletePlanoContas = (request, res) =>
   (async () => {
     const contaREG = request.body;
-    let { msg, linhasAfetadas } = await mdlPlanoContas.DeletePlanoContas(contaREG);
+    let { msg, linhasAfetadas } = await mdlPlanoContas.deletePlanoContas(contaREG);
     res.json({ "status": msg, "linhasAfetadas": linhasAfetadas });
   })();
 

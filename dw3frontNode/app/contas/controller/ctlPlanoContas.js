@@ -26,7 +26,7 @@ const openPlanoContasInsert = (req, res) =>
     try {
       if (req.method == "GET") {
         oper = "c";
-        res.render("contas/view_cadPlanoContas", {
+        res.render("contas/view_cadContas", {
           title: "Cadastro de contas",
           oper: oper,
           userName: userName,
@@ -65,7 +65,7 @@ const openPlanoContasUpdate = (req, res) =>
         oper = "u";
         const id = req.params.id;
         parseInt(id);
-        res.render("contas/view_cadPlanoContas", {
+        res.render("contas/view_cadContas", {
           title: "Cadastro de contas",
           oper: oper,
           idBusca: id,
@@ -156,7 +156,7 @@ const updatePlanoContas = (req, res) =>
       if (req.method == "POST") {
         const regPost = validateForm(req.body);
         const resp = await axios.post(
-          process.env.SERVIDOR_DW3 + "/UpdatePlanoContas",
+          process.env.SERVIDOR_DW3 + "/updatePlanoContas",
           regPost,
           {
             headers: {
