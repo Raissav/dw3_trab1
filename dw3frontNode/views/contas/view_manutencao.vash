@@ -30,7 +30,6 @@
                                     <th>Ação</th>                                    
                                     <th>Código</th>
                                     <th>Descrição</th>
-                                    <th>Data Final</th>
                                     <th>Valor</th>                                   
                                 </tr>
                             </thead>
@@ -41,7 +40,6 @@
                                         class="fa fa-magnifying-glass"></i>Visualizar</a></td>
                                     <td>@registro.codigo</td>
                                     <td>@registro.descricao</td>
-                                    <td>@registro.dtaFinal</td>
                                     <td>@registro.valor</td>                         
                                 </tr>
                                 })
@@ -51,7 +49,6 @@
                                     <th>Ação</th>                                    
                                     <th>Código</th>
                                     <th>Descrição</th>
-                                    <th>Data Final</th>
                                     <th>Valor</th>
                                 </tr>
                             </tfoot>

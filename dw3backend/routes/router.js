@@ -17,8 +17,8 @@ routerApp.get("/", (req, res) => {
 routerApp.get("/getAllPlanoContas", appPlanoContas.getAllPlanoContas);
 routerApp.post("/getPlanoContasByID", appLogin.AutenticaJWT, appPlanoContas.getPlanoContasByID);
 routerApp.post("/insertPlanoContas", appLogin.AutenticaJWT, appPlanoContas.insertPlanoContas);
-routerApp.post("/updatePlanoContas", appPlanoContas.updatePlanoContas);
-routerApp.post("/deletePlanoContas", appPlanoContas.deletePlanoContas);
+routerApp.post("/updatePlanoContas", appLogin.AutenticaJWT,appPlanoContas.updatePlanoContas);
+routerApp.post("/deletePlanoContas", appLogin.AutenticaJWT, appPlanoContas.deletePlanoContas);
 
 
 // Rota Login

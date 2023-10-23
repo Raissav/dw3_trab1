@@ -27,7 +27,7 @@ create table IF NOT EXISTS planoContas (
 );
 
 insert into planoContas values 
-    (default, 'PC01', 'Fornecedor Plástico', '02-11-2023', 5000, false),
-    (default, 'PC02', 'Fornecedor Transporte', '05-12-2023', 6500.50, false)
+    (default, 'PC01', 'Fornecedor Plástico', '02/11/2023', 5000, false),
+    (default, 'PC02', 'Fornecedor Transporte', '05/12/2023', 6500.50, false)
     ON CONFLICT DO NOTHING;
 

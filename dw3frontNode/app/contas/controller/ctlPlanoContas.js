@@ -5,8 +5,8 @@ const getAllPlanoContas = (req, res) =>
   (async () => {
     userName = req.session.userName;
     try {
-      resp = await axios.get(process.env.SERVIDOR_DW3 + "/GetAllPlanoContas", {});
-      //console.log("[ctlLogin.js] Valor resp:", resp.data);
+      resp = await axios.get(process.env.SERVIDOR_DW3 + "/getAllPlanoContas", {});
+      //console.log("[ctlLogin.js.js] Valor resp:", resp.data);
       res.render("contas/view_manutencao", {
         title: "Manutenção de contas",
         data: resp.data,
@@ -89,7 +89,7 @@ const getDados = (req, res) =>
     console.log("[ctlPlanoContas.js|getDados] valor id :", idBusca);
     try {
       resp = await axios.post(
-        process.env.SERVIDOR_DW3 + "/GetPlanoContasByID",
+        process.env.SERVIDOR_DW3 + "/getPlanoContasByID",
         {
           contaid: idBusca,
         },
@@ -120,8 +120,11 @@ const insertPlanoContas = (req, res) =>
       if (req.method == "POST") {
         const regPost = validateForm(req.body);
         regPost.contaid = 0;
+        console.log(
+          "Valor do regPost: ", regPost
+        );
         const resp = await axios.post(
-          process.env.SERVIDOR_DW3 + "/InsertPlanoContas",
+          process.env.SERVIDOR_DW3 + "/insertPlanoContas",
           regPost,
           {
             headers: {
@@ -148,13 +151,13 @@ const insertPlanoContas = (req, res) =>
  
   
 //@ Realiza atualização de contas
-///@ console.log("[ctlPlanoContas.js|updatePlanoContas] Valor regPost: ", regPost);
 const updatePlanoContas = (req, res) =>
   (async () => {
     token = req.session.token;
     try {
       if (req.method == "POST") {
         const regPost = validateForm(req.body);
+        console.log("[ctlPlanoContas.js|updatePlanoContas] Valor regPost: ", regPost);
         const resp = await axios.post(
           process.env.SERVIDOR_DW3 + "/updatePlanoContas",
           regPost,

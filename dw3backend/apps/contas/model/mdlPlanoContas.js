@@ -53,7 +53,7 @@ const updatePlanoContas = async (contaREGPar) => {
           "descricao = $3, " +
           "dtaFinal = $4, " +
           "valor = $5, " +
-          "removido = $6, " +
+          "removido = $6 " +
           "WHERE contaid = $1",
         [
           contaREGPar.contaid,
@@ -66,7 +66,7 @@ const updatePlanoContas = async (contaREGPar) => {
       )
     ).rowCount;
   } catch (error) {
-    msg = "[mdlPlanoContas|insertPlanoContas] " + error.detail;
+    msg = "[mdlPlanoContas|updatePlanoContas] " + error.detail;
     linhasAfetadas = -1;
   }
 
@@ -85,7 +85,7 @@ const deletePlanoContas = async (contaREGPar) => {
     )
   ).rowCount;
 } catch (error) {
-  msg = "[mdlPlanoContas|insertPlanoContas] " + error.detail;
+  msg = "[mdlPlanoContas|deletePlanoContas] " + error.detail;
   linhasAfetadas = -1;
 }
 

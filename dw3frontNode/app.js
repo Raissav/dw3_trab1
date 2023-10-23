@@ -1,4 +1,5 @@
-// DEBUG=dw3frontnode:* npm start
+// set DEBUG=dw3frontNode:*
+//npm start
 
 var createError = require('http-errors');
 var express = require('express');

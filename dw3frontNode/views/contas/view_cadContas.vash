@@ -34,7 +34,7 @@
 
                 <label for="valor" class="col-sm-2 col-xxl-1 col-form-label required">Valor:</label>
                 <div class="col-sm-4 col-xxl-5">
-                   <input type="number" name="valor" class="form-control-plaintext" id="valor" />
+                   <input type="number" name="valor" class="form-control-plaintext" id="valor" maxlength="10" required readonly />
                 </div>
               </div>
             
@@ -110,7 +110,6 @@
   //@ Busca os dados de acordo com o ID para serem alterados
   async function getDados(idBuscaPar) {
     console.log("[getDados] idBusca", idBuscaPar);
-
     try {
       const resp = await axios.post(
         "/contas/getDados", {
@@ -125,7 +124,13 @@
         $("#contaid").val(resp.data.registro.contaid);
         $("#codigo").val(resp.data.registro.codigo);
         $("#descricao").val(resp.data.registro.descricao);
-        $("#dtaFinal").val(resp.data.registro.dtaFinal);
+        const dataFinal = moment(resp.data.registro.dtaFinal).format(
+            "YYYY-MM-DD"
+          );
+        $("#dtaFinal").val(dataFinal);
+        //const dataFinal = new Date(resp.data.registro.dtaFinal);
+        //$("#dtaFinal").val(dataFinal.toISOString().split('T')[0]); 
+        //$("#dtaFinal").val(resp.data.registro.dtaFinal);
         $("#valor").val(resp.data.registro.valor);
 
       } else {
@@ -194,8 +199,8 @@
     $("#descricao").prop("class", "form-control");
     $("#descricao").prop("readonly", false);
 
-    $("#dtaFinal").prop("class", "form-control");
-    $("#dtaFinal").prop("readonly", false);
+    //$("#dtaFinal").prop("class", "form-control");
+    //$("#dtaFinal").prop("readonly", false);
 
     $("#valor").prop("class", "form-control");
     $("#valor").prop("readonly", false);
