@@ -12,7 +12,7 @@ content-type: application/json
 ### teste de buscar todos os contas
 GET http://localhost:40000/getAllPlanoContas HTTP/1.1
 content-type: application/json
-//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5NzYzMTkzNiwiZXhwIjoxNjk3NjMyNTM2fQ.wBWllXbXRNqPsYCgS48fRzPJ-yB4crvJh66-KZR4pGE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5ODE5MTg0MiwiZXhwIjoxNjk4MTkyNDQyfQ.XZIn2iEyG9HPzg5HS7R43gkfpVoKJlTNcde7lrq7h-I
 
 {    
     
@@ -21,44 +21,44 @@ content-type: application/json
 ### teste de buscar contas por ID
 POST http://localhost:40000/getPlanoContasByID HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5Nzg0NjUyOCwiZXhwIjoxNjk3ODQ3MTI4fQ.M89grQmFfdh0iaiM70RBCAWJN-Ke4GqZ9dZMYcSagks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5ODE5MTg0MiwiZXhwIjoxNjk4MTkyNDQyfQ.XZIn2iEyG9HPzg5HS7R43gkfpVoKJlTNcde7lrq7h-I
 
 {    
-    "contaid": 9
+    "contaid": 2
 }
 
 ### teste de inserção de conta
 POST http://localhost:40000/insertPlanoContas HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5Nzg0NjUyOCwiZXhwIjoxNjk3ODQ3MTI4fQ.M89grQmFfdh0iaiM70RBCAWJN-Ke4GqZ9dZMYcSagks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5ODE5MTg0MiwiZXhwIjoxNjk4MTkyNDQyfQ.XZIn2iEyG9HPzg5HS7R43gkfpVoKJlTNcde7lrq7h-I
 
 {    
     "contaid": 0,
-    "codigo": "PC08",
-    "descricao": "Fornecedor Embalagem",
-    "dtaFinal": "17/05/2024",
-    "valor": 5130.40,
+    "codigo": "PC05",
+    "descricao": "Fornecedor Tecido",
+    "dtaFinal": "02/05/2024",
+    "valor": 5230.40,
     "removido": false
 }
 
 ### teste de atualização de conta
 POST http://localhost:40000/updatePlanoContas HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5Nzg0NjUyOCwiZXhwIjoxNjk3ODQ3MTI4fQ.M89grQmFfdh0iaiM70RBCAWJN-Ke4GqZ9dZMYcSagks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5ODE5MTg0MiwiZXhwIjoxNjk4MTkyNDQyfQ.XZIn2iEyG9HPzg5HS7R43gkfpVoKJlTNcde7lrq7h-I
 
 {    
     "contaid": 9,
     "codigo": "PC07",
     "descricao": "Fornecedor Pinceis",
-    "dtaFinal": "04/02/2024",
-    "valor": 4200.75,
+    "dtaFinal": "03/03/2024",
+    "valor": 4600.75,
     "removido": false
 }
 
 ### teste de remoção de conta
 POST http://localhost:40000/deletePlanoContas HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5Nzg0NjUyOCwiZXhwIjoxNjk3ODQ3MTI4fQ.M89grQmFfdh0iaiM70RBCAWJN-Ke4GqZ9dZMYcSagks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5ODE5MTg0MiwiZXhwIjoxNjk4MTkyNDQyfQ.XZIn2iEyG9HPzg5HS7R43gkfpVoKJlTNcde7lrq7h-I
 
 {    
     "contaid": 10

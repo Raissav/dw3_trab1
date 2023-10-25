@@ -4,8 +4,13 @@ const axios = require("axios");
 const getAllPlanoContas = (req, res) =>
   (async () => {
     userName = req.session.userName;
+    token = req.session.token;
     try {
-      resp = await axios.get(process.env.SERVIDOR_DW3 + "/getAllPlanoContas", {});
+      resp = await axios.get(process.env.SERVIDOR_DW3 + "/getAllPlanoContas", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },});
       //console.log("[ctlLogin.js.js] Valor resp:", resp.data);
       res.render("contas/view_manutencao", {
         title: "Manutenção de contas",

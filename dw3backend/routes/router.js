@@ -14,7 +14,7 @@ routerApp.get("/", (req, res) => {
 });
 
 //Rotas de PlanoContas
-routerApp.get("/getAllPlanoContas", appPlanoContas.getAllPlanoContas);
+routerApp.get("/getAllPlanoContas", appLogin.AutenticaJWT, appPlanoContas.getAllPlanoContas);
 routerApp.post("/getPlanoContasByID", appLogin.AutenticaJWT, appPlanoContas.getPlanoContasByID);
 routerApp.post("/insertPlanoContas", appLogin.AutenticaJWT, appPlanoContas.insertPlanoContas);
 routerApp.post("/updatePlanoContas", appLogin.AutenticaJWT,appPlanoContas.updatePlanoContas);
